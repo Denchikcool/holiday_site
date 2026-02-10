@@ -3,6 +3,7 @@ const yesBtn = document.getElementById('yes');
 const modal = document.getElementById('modal');
 const heartsContainer = document.querySelector('.hearts');
 const cry = document.getElementById('cry');
+const carousels = document.querySelectorAll('.carousel-wrapper');
 
 let isTricked = false;
 let caught = false;
@@ -126,4 +127,26 @@ yesBtn.addEventListener('click', ()=>{
         heartsContainer.appendChild(heart);
         setTimeout(()=>heart.remove(),10000);
     }
+});
+
+carousels.forEach(wrapper => {
+    const track = wrapper.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevBtn = wrapper.querySelector('.prev');
+    const nextBtn = wrapper.querySelector('.next');
+    let index = 0;
+
+    function updateSlide() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        index = (index === 0) ? slides.length - 1 : index - 1;
+        updateSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        index = (index === slides.length - 1) ? 0 : index + 1;
+        updateSlide();
+    });
 });
