@@ -92,7 +92,7 @@ noBtn.addEventListener('click', ()=>{
 
     setTimeout(()=>{
         const msg=document.createElement('div');
-        msg.textContent='Но я всё равно надеюсь, что ты останешься со мной ❤️';
+        msg.textContent='Я очень сильно надеюсь на то, что это просто мисклик 🙂❤️';
         msg.style.position='fixed';
         msg.style.bottom='20px';
         msg.style.left='50%';
