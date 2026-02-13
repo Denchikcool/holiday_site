@@ -114,7 +114,7 @@ yesBtn.addEventListener('click', ()=>{
     modal.style.display='flex';
     setTimeout(()=>modal.classList.add('show'),50);
 
-    for(let i=0;i<30;i++){
+    for(let i=0;i<100;i++){
         const heart=document.createElement('span');
         heart.textContent='❤️';
         heart.style.position='absolute';
